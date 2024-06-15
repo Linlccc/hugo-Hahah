@@ -14,6 +14,8 @@ title: Hahah
 defaultContentLanguage: zh
 # 将页面的 Lastmod 参数设置为最后 git 提交日期
 enableGitInfo: true
+# 构建过期（这里用于显示测试主题默认文章）
+buildExpired: true
 
 Params:
   # 描述
