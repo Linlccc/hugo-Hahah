@@ -1,0 +1,17 @@
+name: Hahah
+license: MIT
+licenselink: https://github.com/Linlccc/hugo-Hahah/blob/master/LICENSE
+description: A fast and clean Hugo theme
+homepage: https://github.com/Linlccc/hugo-Hahah
+demosite: https://github.com/Linlccc/hugo-Hahah
+tags:
+  - blog
+features:
+  - blog
+author:
+  name: Linlccc
+  homepage: https://linlccc.com
+original:
+  author: adityatelange
+  homepage: https://github.com/adityatelange
+  repo: https://github.com/adityatelange/hugo-PaperMod

@@ -1,0 +1,22 @@
+# hugo 信息
+module:
+  hugoVersion:
+    extended: true
+    min: 0.116.0
+
+#####################
+# Hahah 主题默认配置 #
+#####################
+
+# 标题
+title: Hahah
+# 默认语言
+defaultContentLanguage: zh
+# 将页面的 Lastmod 参数设置为最后 git 提交日期
+enableGitInfo: true
+
+Params:
+  # 描述
+  description: 不如摸鱼！！！
+  # 默认主题  [auto, dark, light]
+  defaultTheme: auto
