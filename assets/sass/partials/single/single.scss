@@ -392,7 +392,7 @@
     top: var(--header-height);
     transform: translateX(calc(var(--main-width) + var(--gap) / 2));
     width: 20vw;
-    max-width: 460px;
+    max-width: 420px;
     font-size: 15px;
     overflow: auto;
     max-height: calc(100% - var(--header-height) - var(--footer-height));
