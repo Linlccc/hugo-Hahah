@@ -35,14 +35,16 @@ lastmod: {{ (time .Date).Format "2006-01-02 15:04:05" }}
 aliases:
   - aaa
 
-# 关键字
-keywords:
-  - key1
-  - key2
 # 标签
 tags:
   - tag1
   - tag2
+langs:
+  - C++
+# 关键字
+keywords:
+  - key1
+  - key2
 # 分类
 categories:
   - category1
