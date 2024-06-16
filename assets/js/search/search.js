@@ -39,9 +39,11 @@ const fuseOptions = {
   keys: ["title", "permalink", "summary", "content"],
 };
 // 融合默认选项和配置选项
-for (const key in fuseOptions) {
-  const lowerKey = key.toLowerCase();
-  lowerKey in confFuseOptions && (fuseOptions[key] = confFuseOptions[lowerKey]);
+if(confFuseOptions) {
+  for (const key in fuseOptions) {
+    const lowerKey = key.toLowerCase();
+    lowerKey in confFuseOptions && (fuseOptions[key] = confFuseOptions[lowerKey]);
+  }
 }
 
 // 请求搜索数据
