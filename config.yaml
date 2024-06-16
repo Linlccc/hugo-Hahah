@@ -9,16 +9,172 @@ module:
 #####################
 
 # 标题
-title: Hahah
-# 默认语言
-defaultContentLanguage: zh
-# 将页面的 Lastmod 参数设置为最后 git 提交日期
-enableGitInfo: true
-# 构建过期（这里用于显示测试主题默认文章）
+title: Hahaha
+# 发布站点的绝对 URL（协议、主机、路径和尾部斜杠）
+baseURL: https://localhost/
+
+# 构建草稿
+buildDrafts: true
+# 构建过期
 buildExpired: true
 
-Params:
-  # 描述
-  description: 不如摸鱼！！！
+# 菜单
+menus:
+  main:
+    - identifier: search
+      name: search
+      pageRef: /search/
+      weight: 10
+
+    - identifier: hahah-sample
+      name: hahah-sample
+      pageRef: /hahah-sample/
+      weight: 20
+
+    - identifier: tags
+      name: tags
+      pageRef: /tags/
+      weight: 30
+
+    - identifier: archives
+      name: archives
+      pageRef: /archives/
+      weight: 50
+
+markup:
+  # 代码高亮配置 https://gohugo.io/getting-started/configuration-markup/#highlight
+  highlight:
+    # 是否突出显示代码块(为 false 其他高亮配置全部无效)
+    codeFences: true
+    # 是否不使用 class 来管理样式
+    noClasses: false
+    # 高亮主题 https://xyproto.github.io/splash/docs/longer/all.html
+    style: onedark
+    # 是否显示行号
+    lineNos: true
+    # 行号是否生成锚点
+    anchorLineNos: true
+    # 是否将行号放在表格中
+    lineNumbersInTable: true
+    # 是否猜测代码块语法
+    guessSyntax: true
+    # 是否将代码块处理成一行
+    hl_inline: false
+  goldmark:
+    # 单独的图片是否包装在一个段落中，图片是否包装在p标签中
+    wrapStandAloneImageWithinParagraph: true
+
+  # 目录配置
+  tableOfContents:
+    # 开始的标题级别
+    startLevel: 2
+    # 结束的标题级别
+    endLevel: 6
+    # 是否使用有序目录
+    ordered: true
+
+# 压缩
+minify:
+  minifyOutput: true
+
+# 文件生成输出
+outputs:
+  home:
+    - html
+    - rss
+    - json
+
+# 分类
+taxonomies:
+  tag: tags
+
+# 参数
+params:
   # 默认主题  [auto, dark, light]
   defaultTheme: auto
+  # 是否启用 manifest (安装到桌面)
+  isEnableManifest: true
+  # 列表页中显示 Rss 按钮
+  showRssButtonInSectionTermList: true
+
+  # logo 信息
+  logo:
+    text: Hahah
+    image: /favicon/dark/favicon-192x192.png
+    imageHeight: 30
+  # 提供商信息
+  powereds:
+    - name: Hugo
+      url: https://gohugo.io/
+    - name: Hahah
+      url: https://github.com/Linlccc/hugo-Hahah
+  # 网站图标
+  favicon:
+    dark:
+      favicon: /favicon/dark/favicon.ico
+      icon: /favicon/dark/favicon.svg
+      favicon_16: /favicon/dark/favicon-16x16.png
+      favicon_32: /favicon/dark/favicon-32x32.png
+      favicon_180: /favicon/dark/favicon-180x180.png
+      favicon_192: /favicon/dark/favicon-192x192.png
+      favicon_512: /favicon/dark/favicon-512x512.png
+    light:
+      favicon: /favicon/light/favicon.ico
+      icon: /favicon/light/favicon.svg
+      favicon_16: /favicon/light/favicon-16x16.png
+      favicon_32: /favicon/light/favicon-32x32.png
+      favicon_180: /favicon/light/favicon-180x180.png
+      favicon_192: /favicon/light/favicon-192x192.png
+      favicon_512: /favicon/light/favicon-512x512.png
+
+  # 站点的特殊 page 页，(Kind == "page" && 不是文章页)
+  specialPages:
+    - search
+    - archives
+
+  # 在档案页显示所有页面
+  showAllPagesInArchive: true
+
+  # 日期格式
+  dateFormat: 2006-01-02
+  # 显示阅读时间
+  showReadingTime: true
+  # 显示字数
+  showWordCount: true
+  # 显示作者
+  showAuthor: true
+
+  # 经典模式信息
+  classicInfo:
+    # 启用
+    enabled: true
+    # 标题
+    title: 😀😃😄😁
+    # 内容
+    content: 😀😃😄😁😆😅🤣😂🙂🙃😉😊😇🥰😍🤩😘😗😚😙😋😛😜🤪😝🤑🤗🤭🤫🤔🤐🤨😐😑😶😶‍🌫️😏😒🙄😬😮‍💨🤥😌😔😪🤤😴😷🤒🤕🤢🤮🤧🥵🥶🥴😵😵‍💫🤯🤠🥳😎🤓🧐😕😟🙁☹️😮😯😲😳🥺😦😧😨😰😥😢😭😱😖😣😞😓😩😫🥱😤😡😠🤬😈👿💀☠️💩🤡👹👺👻👽👾🤖😺😸😹😻😼😽🙀😿😾
+  # Home 页显示的文章类型(内容文章目录名或文章的 type 配置)
+  homeShowTypes:
+    - hahah-sample
+  # 社交图标
+  socialIcons:
+    - name: github
+      url:
+    - name: email
+      url:
+    - name: rss
+      url: index.xml
+
+  # 文章编辑链接信息
+  editPost:
+    # 链接
+    url: https://github.com/Linlccc/hugo-Hahah/edit/master/src/content
+    # 将文件路径附加到编辑链接
+    appendFilePath: true
+    # 禁用编辑
+    disabled: false
+  # 显示目录
+  showToc: true
+  # 目录打开
+  tocOpen: true
+  # 显示帖子导航链接
+  showPostNavLinks: true
