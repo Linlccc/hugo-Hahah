@@ -24,25 +24,21 @@ git submodule add git@github.com:Linlccc/hugo-Hahah.git themes/Hahah
 将以下内容添加到 hugo.toml/hugo.yaml 将会显示示例文章
 
 ```toml
+# 主题
+theme = "Hahah"
 # 构建草稿
 buildDrafts = true
 # 构建过期
 buildExpired = true
-
-# 主页显示文章类型
-[Params]
-homeShowTypes = [ "hahah-sample" ]
 ```
 
 ```yaml
+# 主题
+theme: Hahah
 # 构建草稿
 buildDrafts: true
 # 构建过期
 buildExpired: true
-# 主页显示文章类型
-Params:
-  homeShowTypes:
-    - hahah-sample
 ```
 
 ## Configuration
