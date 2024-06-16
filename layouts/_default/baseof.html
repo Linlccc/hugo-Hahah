@@ -8,7 +8,7 @@
 
   <main class="main">{{ block "main" . }}{{ end }}</main>
 
-  {{ partialCached "body/footer/index.html" . .Kind .Layout }}
+  {{ partial "body/footer/index.html" . }}
 
   <!-- css 引用 -->
   {{ partial "body/cssImport.html" . }}
