@@ -1,7 +1,8 @@
 # Hahah
 
-> Hugo PaperMod is a theme based on [hugo-PaperMod](https://github.com/adityatelange/hugo-PaperMod/).
-> The goal of this project is to add more features and customization to the og theme.
+> Hugo Hahah is a theme based on [hugo-PaperMod](https://github.com/adityatelange/hugo-PaperMod/).
+
+![alt text](images/screenshot.png)
 
 ## Features
 
