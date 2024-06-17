@@ -41,6 +41,7 @@
       &:focus {
         border: 2px solid var(--interaction);
         transform: scale(0.98);
+        outline: none;
       }
     }
   }
