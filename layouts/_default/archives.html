@@ -30,10 +30,10 @@
           <div class="posts">
             {{ range .Pages }}
               <div class="entry">
-                <h3 class="entryTitle">
+                <h4 class="entryTitle">
                   {{ .Title }}
                   {{ if .Draft }}<sup><span class="draft">&nbsp;&nbsp;[draft]</span></sup>{{ end }}
-                </h3>
+                </h4>
                 <div class="meta">{{ partial "common/pageMeta.html" . }}</div>
                 <a class="entryLink" aria-label="post link to {{ plainify .Title }}" href="{{ .Permalink }}"></a>
               </div>
