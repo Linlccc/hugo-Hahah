@@ -101,7 +101,7 @@ params:
   # logo 信息
   logo:
     text: Hahah
-    image: /favicon/dark/favicon-192x192.png
+    # image: /favicon/dark/favicon-192x192.png
     imageHeight: 30
   # 提供商信息
   powereds:
