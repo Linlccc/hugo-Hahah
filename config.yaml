@@ -87,6 +87,7 @@ outputs:
 # 分类
 taxonomies:
   tag: tags
+  lang: langs
 
 # 参数
 params:
