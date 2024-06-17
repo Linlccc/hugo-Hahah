@@ -40,11 +40,35 @@
   }
 })();
 
-// 主题切换
+// 主题管理
 (() => {
+  // 主题切换按钮
   const themeToggle = document.getElementById("themeToggle");
+  // 长按定时器
+  let pressTimer;
+  // 长按标记
+  let isLongPress = false;
+  // 开始计时
+  function startTimer(e) {
+    pressTimer = setTimeout(() => {
+      isLongPress = true;
+      El_Root.className = ThemeColor.Auto;
+      localStorage.removeItem(ThemeColorKey);
+    }, 1000);
+  }
+  // 清除计时
+  function cancelTimer(e) {
+    clearTimeout(pressTimer);
+  }
   if (themeToggle) {
-    themeToggle.addEventListener("click", () => {
+    // 切换
+    themeToggle.addEventListener("click", (e) => {
+      // 如果时长按
+      if (isLongPress) {
+        isLongPress = false;
+        e.stopPropagation();
+        return;
+      }
       // 计算切换后的主题颜色
       let themeColor = ThemeColor.Light;
       if (El_Root.classList.contains(ThemeColor.Auto)) themeColor = MediaColor_Light.matches ? ThemeColor.Dark : ThemeColor.Light;
@@ -54,5 +78,15 @@
       // 持久化
       localStorage.setItem(ThemeColorKey, themeColor);
     });
+
+    // 长按一秒切换成自动（跟随主题）
+    // 按下
+    themeToggle.addEventListener("mousedown", startTimer);
+    themeToggle.addEventListener("touchstart", startTimer);
+    // 松开
+    themeToggle.addEventListener("mouseup", cancelTimer);
+    themeToggle.addEventListener("mouseleave", cancelTimer);
+    themeToggle.addEventListener("touchend", cancelTimer);
+    themeToggle.addEventListener("touchcancel", cancelTimer);
   }
 })();
