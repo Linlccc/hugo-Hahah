@@ -57,6 +57,7 @@
 
     &.active {
       background: var(--interaction);
+      color: #fff;
     }
     &:not(.active) a:hover {
       color: var(--interaction);
