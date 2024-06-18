@@ -22,6 +22,8 @@
       display: flex;
       margin: auto var(--gap);
       flex-wrap: inherit;
+      user-select: none;
+      -webkit-user-select: none;
 
       // 标题
       a {
