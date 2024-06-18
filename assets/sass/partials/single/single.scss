@@ -314,6 +314,11 @@
   }
 }
 
+// 侧边栏
+.sidebar {
+  display: none;
+}
+
 // 页脚（tags,上/下章链接/分享）
 .postFooter {
   margin: 30px 0 20px 0;
@@ -386,13 +391,14 @@
 
 // 屏幕大于 1280 时
 @media screen and (min-width: 1280px) {
+  // 目录
   .toc {
     position: fixed;
     z-index: 990;
     top: var(--header-height);
     transform: translateX(calc(var(--main-width) + var(--gap) / 2));
     width: 20vw;
-    max-width: 420px;
+    max-width: var(--sidebar-width);
     font-size: 15px;
     overflow: auto;
     max-height: calc(100% - var(--header-height) - var(--footer-height));
@@ -429,4 +435,59 @@
       }
     }
   }
+  // 侧边栏
+  .sidebar {
+    position: fixed;
+    z-index: 99;
+    top: var(--header-height);
+    transform: translateX(calc(-100% - var(--gap) / 2));
+    width: 20vw;
+    max-width: var(--sidebar-width);
+    font-size: 15px;
+    overflow: auto;
+    max-height: calc(100% - var(--header-height) - var(--footer-height));
+    display: block;
+    background: var(--background-200);
+    border-radius: var(--radius);
+    padding: var(--gap);
+  }
+  #leftSidebar {
+    p {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    a {
+      display: block;
+      margin: 10px;
+      overflow: hidden;
+      &.active {
+        color: var(--text-100);
+        &:before {
+          content: "";
+          position: absolute;
+          right: 30px;
+          height: 24px;
+          width: 3px;
+          background: var(--border-100);
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          height: 24px;
+          width: calc(100% - 30px);
+          background: var(--border-200);
+          opacity: 0.7;
+          z-index: -1;
+        }
+      }
+    }
+  }
+  #rightSidebar {
+    display: none;
+    transform: translateX(calc(var(--main-width) + var(--gap) / 2));
+  }
+}
+.main {
+  // border: 1px red solid;
 }

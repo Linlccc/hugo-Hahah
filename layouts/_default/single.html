@@ -29,6 +29,21 @@
     </div>
   {{ end }}
 
+  <!-- 侧边栏 -->
+  <!-- 获取当前系列的页面并执行升序排序 -->
+  {{ if .Params.seriesInfo.id }}
+    {{ $seriesPages := sort (where site.RegularPages ".Params.seriesInfo.id" "==" .Params.seriesInfo.id) ".Params.seriesInfo.order" }}
+    <aside dir="rtl" class="sidebar" id="leftSidebar">
+      <p>{{ .Params.seriesInfo.id }}</p>
+      {{ range $seriesPages }}
+        <a class="{{ cond (eq .Params.seriesInfo.order $.Params.seriesInfo.order) "active" "" }}" href="{{ .Permalink }}">{{ .Title }}</a>
+      {{ end }}
+    </aside>
+    <!-- 右侧边栏 -->
+    <aside class="sidebar" id="rightSidebar">
+    </aside>
+  {{ end }}
+
   <!-- tags,上/下章链接/分享 -->
   <footer class="postFooter">
     <ul class="tags" role="list">{{ range .GetTerms "tags" }}<li><a role="text" href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>{{ end }}</ul>
