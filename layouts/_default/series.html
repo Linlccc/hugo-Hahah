@@ -17,7 +17,7 @@
 
   <!-- 得到系列文章(两个方案1.所有设置了seriesInfo的文章。2.series目录下的文章) -->
   {{/* $seriesPages := where site.RegularPages ".Params.seriesInfo" "!=" nil */}}
-  {{ $seriesPages := .RegularPages }}
+  {{ $seriesPages := where .RegularPages ".Params.seriesInfo" "!=" nil }}
   <!-- 根据id分组 -->
   {{ $seriesGroups := dict }}
   {{ $pages := slice }}
