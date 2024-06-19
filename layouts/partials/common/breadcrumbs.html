@@ -18,11 +18,17 @@
         {{ $pages = $pages | append $page }}
       {{ end }}
     {{ end }}
+    {{ $pages = $pages | append . }}
 
     <!-- 遍历导航页 -->
     {{ range $index, $page := $pages }}
       {{ if gt $index 0 }}&nbsp;»&nbsp;{{ end }}
-      <a href="{{ $page.Permalink }}">{{ $page.Title }}</a>
+      {{ if eq $page $ }}
+        <span>{{ $page.Title }}</span>
+      {{ else }}
+        <a href="{{ $page.Permalink }}">{{ $page.Title }}</a>
+      {{ end }}
+
     {{ end }}
   </div>
 {{ end }}
