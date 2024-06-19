@@ -132,7 +132,6 @@ params:
   specialPages:
     - search
     - archives
-    - series
 
   # 在档案页显示所有页面
   showAllPagesInArchive: true
