@@ -2,7 +2,10 @@
   . : 文章页上下文
 -->
 
-{{ $pages := (where site.RegularPages "Type" "in" site.Params.homeShowTypes) | partial "pageSort"  }}
+<!-- 获取当前类型的文章做上下页 -->
+{{ $pages := (where site.RegularPages "Type" "==" .Type) | partial "pageSort"  }}
+<!-- 对系列文章做上下页支持 -->
+{{ with .Params.seriesInfo.id }}{{ $pages = sort (where $pages ".Params.seriesInfo.id" "==" .) ".Params.seriesInfo.order" }}{{ end }}
 {{ if .Param "showPostNavLinks" }}
   <nav class="paginav">
     {{ with $pages.Next . }}
