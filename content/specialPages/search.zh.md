@@ -9,4 +9,6 @@ description: ""
 placeholder: "搜索关键字"
 # 隐藏元信息(隐藏后不显示多语言)
 hideMeta: false
+# 页面链接
+url: ../search
 ---
