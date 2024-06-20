@@ -12,7 +12,7 @@
   <!-- 如果有参数（使用参数构建后，会成私域） -->
   {{ with $jsInfo.params }}{{ $js = $js | js.Build (dict "params" .) }}{{ end }}
   <!-- 引用脚本 -->
-  {{ $outfile := printf "assets/js/%s.css" . }}
+  {{ $outfile := printf "assets/js/%s.js" . }}
   {{ if ($js = $js | resources.Copy $outfile | minify | fingerprint) }}
     <!-- 是否引入 -->
     {{ if $jsInfo.import }}
