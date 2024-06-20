@@ -135,4 +135,6 @@ editPost:
   appendFilePath: true
   # 禁用编辑
   disabled: false
+  # 在新页面打开
+  openInNewPage: false
 ---
