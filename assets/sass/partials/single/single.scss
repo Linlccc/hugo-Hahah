@@ -60,9 +60,11 @@
   dl,
   ol,
   ul,
-  p,
   figure {
     margin-bottom: var(--gap);
+  }
+  p {
+    margin-bottom: calc(var(--gap) / 2);
   }
   li {
     margin-top: 5px;
